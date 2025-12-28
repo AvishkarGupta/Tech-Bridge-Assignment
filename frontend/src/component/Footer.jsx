@@ -1,1 +1,5 @@
-export function
+export function Footer(){
+
+  return <>
+    </>
+}

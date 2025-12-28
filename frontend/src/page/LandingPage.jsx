@@ -1,6 +1,8 @@
 export function LandingPage(){
 
-  return <>
   
+
+  return <>
+    landing
   </>
 }

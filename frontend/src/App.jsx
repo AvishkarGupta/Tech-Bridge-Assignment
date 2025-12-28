@@ -1,21 +1,9 @@
-import { useState } from 'react'
-import './App.css'
-import {Input} from "./component/index.js"
+import { Outlet } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-  let attributsForInput = {
-    type: "email", 
-    name: "email", 
-    readOnly: false, 
-    required: true, 
-    autoComplete:"email", 
-    placeholder:"Enter your email", 
-    autoFocus: false
-  }
   return (
     <>
-    <Input value={attributsForInput}/>
+    <Outlet />
     </>
   )
 }
