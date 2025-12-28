@@ -1,9 +1,13 @@
+Live at: https://project-tracker-assignment.onrender.com/
+creds: avi@gmail.com/123
+
 Full Stack Test Case Management System - Assignment
 
 ##Project Overview
 Create a Test Case Management application that allows teams to create, manage, and track test cases, test suites, and test execution results for software projects.
 
 Tech Stack Requirements
+
 - Frontend: React 18+
 
 - Backend: Node.js with Express.js
@@ -15,7 +19,9 @@ Tech Stack Requirements
 - Charts: Chart.js or Recharts
 
 Features to Implement
+
 1. User Authentication
+
 - User registration and login
 
 - JWT-based authentication
@@ -38,9 +44,8 @@ Features to Implement
 
 - Frontend conditional rendering (e.g., disabling execution buttons for read-only users)
 
- 
-
 2. Project Management
+
 - Create and manage multiple test projects
 
 - Project details (name, description, version, status)
@@ -49,9 +54,8 @@ Features to Implement
 
 - Only admin and test-lead can create/modify projects
 
- 
-
 3. Test Case Management
+
 - Create, edit, delete test cases (admin and test-lead only)
 
 - Test case attributes:
@@ -76,9 +80,8 @@ Features to Implement
 
 - read-only users can view test case details only
 
- 
-
 4. Test Execution
+
 - Execute test cases (tester, test-lead, and admin only)
 
 - Record test results (Pass, Fail, Blocked, Skipped)
@@ -93,9 +96,8 @@ Features to Implement
 
 - Track execution progress
 
- 
-
 5. Dashboard with Analytics
+
 - Test execution summary (total, passed, failed, blocked, pending)
 
 - Test coverage metrics
@@ -112,9 +114,8 @@ Features to Implement
 
 - All users, including read-only, can access dashboards
 
- 
-
 6. Test Suite Management
+
 - Create and manage test suites
 
 - Add/remove test cases from suites
@@ -123,9 +124,8 @@ Features to Implement
 
 - Suite-level reporting
 
- 
-
 7. Performance Features
+
 - Lazy loading for different pages/components
 
 - Pagination for test case lists
@@ -136,11 +136,11 @@ Features to Implement
 
 - Virtual scrolling for large test case lists
 
- 
-
 Technical Requirements
 Frontend Requirements (React)
+
 1. React Hooks Implementation
+
 - useContext:
 
   - Create contexts for user authentication and theme management
@@ -159,9 +159,8 @@ Frontend Requirements (React)
 
   - Memoize filtered/sorted test case lists
 
- 
-
 2. Lazy Loading Implementation
+
 - Use React.lazy() for route-based code splitting
 
 - Use React.Suspense for loading states
@@ -171,6 +170,7 @@ Frontend Requirements (React)
 - Lazy load test execution history
 
 3. Charts Integration
+
 - Use Chart.js or Recharts for data visualization
 
 - Implement at least 3 different chart types:
@@ -181,11 +181,7 @@ Frontend Requirements (React)
 
   - Bar chart for pass/fail rates by priority or type
 
- 
-
 Backend Requirements (Node.js)
-
- 
 
 1. Caching Implementation
 
@@ -198,8 +194,6 @@ Backend Requirements (Node.js)
 - Cache project metadata for 1 hour
 
 - Implement cache invalidation on data updates
-
- 
 
 2. Rate Limiting
 
@@ -215,8 +209,6 @@ Backend Requirements (Node.js)
 
   - Analytics endpoints: 50 requests per hour
 
- 
-
 3. Security
 
 - Implement method to prevent from attacks like XSS and SQL Injection
@@ -226,8 +218,6 @@ Backend Requirements (Node.js)
 - Implement token based API calling mechanism
 
 - Secure file upload for test attachments
-
- 
 
 4. Role-Based Access Control (RBAC)
 
@@ -260,6 +250,7 @@ Backend Requirements (Node.js)
   - POST /api/projects - admin and test-lead only
 
 Database Schema Requirements
+
 - Users table (with role field)
 
 - Projects table
@@ -280,6 +271,7 @@ Database Schema Requirements
 
 Deliverables
 Code Repository
+
 - Well-organized GitHub repository with clear README
 
 - Proper commit history showing development progress
@@ -288,9 +280,8 @@ Code Repository
 
 - Environment configuration examples
 
- 
-
 Documentation
+
 - API documentation (using Swagger/OpenAPI)
 
 - Setup instructions for local development
@@ -300,6 +291,7 @@ Documentation
 - User guide for different roles
 
 Live Demo
+
 - Working application with full functionality
 
 - Demo credentials for admin, test-lead, tester, and read-only roles
@@ -309,6 +301,7 @@ Live Demo
 - Performance metrics showing caching effectiveness
 
 Bonus Features (Optional)
+
 - Export test cases to CSV/Excel
 
 - Import test cases from CSV/Excel
@@ -324,5 +317,3 @@ Bonus Features (Optional)
 - Collaborative comments on test cases
 
 - Dark mode theme toggle
-
- 
