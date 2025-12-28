@@ -1,0 +1,41 @@
+.navbar {
+  box-sizing: content-box;
+  border-bottom: 3px solid rgb(197, 196, 194);
+  max-width: 5000px;
+  width: 100%;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  padding: 16px 0px;
+  color: white;
+  background-color: white;
+  font-weight: 600;
+  max-height: 50rem;
+  max-width: 200rem;
+}
+
+.items{
+  text-decoration: none;
+  margin: 0rem 1rem;
+  color: black;
+  padding: 0rem 1rem;
+}
+
+.items:hover, .button:hover{
+  border: 1px solid rgb(197, 196, 194);
+  border-radius: 10px;
+}
+
+.button{
+  color: blue;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  margin-right: 4rem;
+  text-decoration: none;
+  padding: 0rem 1rem;
+}

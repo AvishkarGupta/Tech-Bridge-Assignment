@@ -1,0 +1,17 @@
+.container{
+  /* border: 1px solid black; */
+  margin: 3.3rem;
+  padding-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+
+.listItem{
+  margin: 10px 0rem;
+  transition: transform 0.3s ease;
+}
+
+.listItem:hover{
+  transform: scale(1.1);
+  scale: 1;
+}

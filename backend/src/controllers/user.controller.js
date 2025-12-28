@@ -66,9 +66,9 @@ const registerUser = asyncHandler( async(req, res) =>{
 } )
 
 const loginUser = asyncHandler( async(req, res) =>{
-
+  console.log(req.body) 
   const {email, password} = req.body
-  
+  console.log("request received for login")
   if([email, password].some( ele => ele?.trim() === "")){
     throw new ApiError(409, "Email and password is required");
   }
@@ -93,7 +93,7 @@ const loginUser = asyncHandler( async(req, res) =>{
     httpOnly: true,
     secure: true,
   }
-
+  console.log("sending response")
   return res
   .status(200)
   .cookie("accessToken", accessToken, options)
@@ -102,13 +102,15 @@ const loginUser = asyncHandler( async(req, res) =>{
 })
 
 const logoutUser = asyncHandler( async(req, res)=>{
+  console.log(req)
+  console.log("request received for user logout")
   await User.findByIdAndUpdate(req.user._id, {$set:{refreshToken: undefined}}, {new: true})
 
   const options = {
     httpOnly: true,
     secure: true
   }
-
+   console.log("user logged out") 
   return res
   .status(200)
   .clearCookie("accessToken", options)
