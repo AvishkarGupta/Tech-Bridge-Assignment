@@ -25,12 +25,12 @@ export function Login(){
 const handleLogIn = asyncHandler(async (e) => {
   e.preventDefault();
 
-  const response = await axios.post(
+  const {data} = await axios.post(
     `${API_URL}/api/v1/users/login`,
     input
   );
 
-  login(response.data.data);
+  login(data.data);
 });
   
 

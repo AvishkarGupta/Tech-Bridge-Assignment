@@ -19,8 +19,8 @@ createRoutesFromElements(
       {/* Protected routes */}
       <Route element={<Auth/>}>
         <Route path='home' element={<Home/>} />
-        <Route path='projects-dashboard' element={<Projects/>} />
-        <Route path='testing-dashboard' element={<Testing/>} />
+        <Route path='projects' element={<Projects/>} />
+        <Route path='testing' element={<Testing/>} />
       </Route>
       {/* page 404 */}
       <Route path="*" element={<Page404 />} />
