@@ -18,6 +18,8 @@ export function Navbar(){
     private: [
       { name: "Projects", to: "/projects" },
       { name: "Create Project", to: "/create-project" },
+      { name: "All Test", to: "/tests" },
+      { name: "Create Tests", to: "/create-tests" },
       { name: "Profile", to: "/profile" },
     ],
   };

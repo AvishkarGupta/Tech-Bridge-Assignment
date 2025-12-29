@@ -1,19 +1,22 @@
 import styles from "./AttachmentPreview.module.css"
 
-export function AttachmentPreview({ file }) {
+function AttachmentPreview({ file }) {
 
-  const getFileType = (url) => {
-   return url.split(".").pop().toLowerCase();
+  const getFileType = (url = "") => {
+    if (typeof url !== "string") return "";
+    return url.split(".").pop().toLowerCase();
   };
+
 
   if (!file?.url) return null;
   const fileType = getFileType(file.url);
 
   if (fileType === "pdf") {
     return (
-      <iframe className={styles.iframe}
+      <iframe
+        className={styles.iframe}
         src={file.url}
-        title={file.name}
+        title={String(file.name || "attachment")}
       />
     );
   }
@@ -22,7 +25,7 @@ export function AttachmentPreview({ file }) {
   return (
     <img
       src={file.url}
-      alt={file.name}
+      alt={String(file.name || "attachment")}
       style={{ maxWidth: "100%", borderRadius: "8px" }}
     />
   );
@@ -30,3 +33,6 @@ export function AttachmentPreview({ file }) {
 
   return null;
 }
+
+
+export default AttachmentPreview;

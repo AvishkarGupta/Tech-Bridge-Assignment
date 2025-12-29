@@ -1,9 +1,12 @@
-import styles from "./Projects.module.css"
-import { useAppContext } from "../../store/Store";
-import { useEffect, useState } from "react";
-import { asyncHandler } from "../../AsyncHandler/asyncHandler";
 import axios from "axios";
-import {AttachmentPreview} from "../../component/AttachmentPreview/AttachmentPreview"
+import styles from "./Projects.module.css"
+import { useEffect, useState, lazy, Suspense } from "react";
+import { useAppContext } from "../../store/Store";
+import { asyncHandler } from "../../AsyncHandler/asyncHandler";
+
+const AttachmentPreview = lazy(() =>
+  import("../../component/AttachmentPreview/AttachmentPreview")
+);
 
 const API_URL = import.meta.env.VITE_API_URL;
 export function Projects(){
@@ -45,7 +48,11 @@ export function Projects(){
               <div className={styles.version}>{project.version}</div>
               <div className={styles.description}>{project.description}</div>
               <div className={styles.status}>{project.status}</div>
-              <AttachmentPreview file={project.attachment[0]} />
+              {project?.attachment?.length > 0 && (
+                <Suspense fallback={<div>Loading attachment...</div>}>
+                  <AttachmentPreview file={project.attachment[0]} />
+                </Suspense>
+              )}
               {project.testcases?.map(() =>{
                 return <></>
               })}
