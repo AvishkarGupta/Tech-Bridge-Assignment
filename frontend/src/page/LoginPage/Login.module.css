@@ -48,3 +48,9 @@
 .button:hover{
   background-color: rgb(229, 234, 234);
 }
+
+.error{
+  color: red;
+  text-align: center;
+  font-weight: 900;
+}

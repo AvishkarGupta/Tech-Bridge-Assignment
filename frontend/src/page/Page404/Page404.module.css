@@ -1,0 +1,60 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: #000000;
+}
+
+.card {
+  text-align: center;
+  padding: 48px 56px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.code {
+  font-size: 96px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title {
+  font-size: 22px;
+  margin-top: 12px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin: 12px 0 28px;
+  color: #333;
+}
+
+.button {
+  background: #000;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

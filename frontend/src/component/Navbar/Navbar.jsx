@@ -21,7 +21,7 @@ export function Navbar(){
   const LogInItems = [
     {
       name: "Projects",
-      to: "contact"
+      to: "projects-dashboard"
     }
   ]
 

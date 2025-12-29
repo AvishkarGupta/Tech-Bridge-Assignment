@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from "react-router-dom"
 import App from './App.jsx'
 import { AppProvider } from './store/Store.jsx'
-import { Home, LandingPage, Login, Projects, Testing } from './page/index.js'
+import { Home, LandingPage, Login, Projects, Testing, Page404} from './page/index.js'
 import { Auth } from "./Auth/Auth.jsx"
 import { UnAuthenticatedRoutes } from "./Auth/UnAuthenticatedRoutes.jsx"
 
@@ -22,7 +22,8 @@ createRoutesFromElements(
         <Route path='projects-dashboard' element={<Projects/>} />
         <Route path='testing-dashboard' element={<Testing/>} />
       </Route>
-      
+      {/* page 404 */}
+      <Route path="*" element={<Page404 />} />
     </Route>
   )
 )
