@@ -1,5 +1,4 @@
-import mongoose, {Schema, mode} from "mongoose";
-import { User } from "./user.modules.js";
+import mongoose, {Schema} from "mongoose";
 
 const projectSchema = new Schema(
   {
@@ -14,9 +13,10 @@ const projectSchema = new Schema(
     version:{
       type: String
     },
-    Status:{
+    status: {
       type: String,
-      
+      enum: ["Active", "Completed", "Archived"],
+      default: "Active"
     },
     owner:{
       type: Schema.Types.ObjectId,
@@ -26,9 +26,18 @@ const projectSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User"
     },
-    attachments:{
-      type: String,
-    },
+    attachments: [
+      {
+        url: String,
+        name: String
+      }
+    ],
+    testcases: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Test"
+      }
+    ]
   }, {timestamps: true}
 )
 
