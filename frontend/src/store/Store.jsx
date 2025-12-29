@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(undefined);
+  const [projects, setProjects] = useState([]);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ user, login, logout, hydrated }}>
+    <AppContext.Provider value={{ user, login, logout, hydrated, projects }}>
       {children}
     </AppContext.Provider>
   );

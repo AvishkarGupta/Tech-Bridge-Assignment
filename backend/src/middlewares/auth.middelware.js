@@ -6,9 +6,9 @@ import {asyncHandler} from "../utils/asyncHandler.js"
 
 export const verifyjwt =  asyncHandler( async (req, res, next)=>{
   try {
-    // const token = req.cookies?.accessToken || req.headers?.authorization?.replace("Bearer ", "");
-    // const token1 = req.cookies?.accessToken
-    const token1 = req?.headers["authorization"]?.replace("Bearer ", "") || req?.cookies?.accessToken
+
+    const token1 = req.headers.authorization?.replace("Bearer ", "")
+    
     if (!token1){
       throw new ApiError(402, "Unable to excrate token from headers.")
     }
@@ -22,8 +22,6 @@ export const verifyjwt =  asyncHandler( async (req, res, next)=>{
       decodedToken = jwt.verify(token1, process.env.REFRESH_TOKEN_SECRET);  
       
     }
-
-    // const decodedToken = jwt.verify(token1, process.env.ACCESS_TOKEN_SECRET)
 
     const user = await User.findById(decodedToken._id).select("-password -refreshToken")
 

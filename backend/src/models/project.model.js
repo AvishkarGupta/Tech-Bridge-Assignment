@@ -2,7 +2,7 @@ import mongoose, {Schema} from "mongoose";
 
 const projectSchema = new Schema(
   {
-    projectName:{
+    title:{
       type: String,
       required: true,
       trim: true,
@@ -26,7 +26,7 @@ const projectSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User"
     },
-    attachments: [
+    attachment: [
       {
         url: String,
         name: String

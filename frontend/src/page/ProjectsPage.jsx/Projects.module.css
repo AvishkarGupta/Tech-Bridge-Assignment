@@ -1,0 +1,44 @@
+.container{
+  margin-top: 3.3rem;
+  border:1px solid black ;
+  
+}
+.containerdiv{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.firstHeading{
+  justify-self: center;
+}
+
+.project{
+  border: 1px solid black;
+  min-width: 20rem;
+  min-height: 20rem;
+  padding: 1rem;
+}
+
+.title{
+  margin-top: 0.5rem;
+  justify-self: center;
+  font-weight: 900;
+}
+
+.version{
+  justify-self: end;
+}
+
+.description{
+  margin-top: 0.5rem;
+  justify-self: center;
+  font-weight: 400;
+  min-width: 10rem;
+  overflow-x: hidden;
+}
+
+.status{
+  justify-self: end;
+}

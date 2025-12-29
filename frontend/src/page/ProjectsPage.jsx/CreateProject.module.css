@@ -1,0 +1,83 @@
+.container{
+  margin-top: 3.3rem;
+}
+
+.firstHeading{
+  margin-top: 4rem;
+  justify-self: center;
+}
+
+.form{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+  margin: auto;
+  min-width: 25rem;
+  max-width: 45rem;
+}
+.inputContainer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+}
+.inputContainer > div > div{
+  justify-self: start;
+}
+
+.childDiv{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+
+}
+
+.childDiv > input{
+  /* padding: 0.5rem; */
+  border: 1px solid white;
+  border-bottom: 2px solid black;
+  outline: none;
+}
+
+.childtextArea{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+  outline: none;
+}
+.childtextArea > textarea{
+  min-width: 20rem; 
+  border: 1px solid white;
+  border-bottom: 2px solid black;
+  outline: none;
+}
+
+
+.createButton{
+  align-self: center;
+  justify-self: center;
+  max-width: 10rem;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.error{
+  color: red;
+  font-weight: 800;
+  align-self: center;  
+}
+
+.success{
+  color: rgb(17, 255, 0);
+  font-weight: 800;
+  align-self: center;  
+}

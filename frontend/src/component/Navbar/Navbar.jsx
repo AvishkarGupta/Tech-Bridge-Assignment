@@ -17,6 +17,7 @@ export function Navbar(){
     ],
     private: [
       { name: "Projects", to: "/projects" },
+      { name: "Create Project", to: "/create-project" },
       { name: "Profile", to: "/profile" },
     ],
   };
