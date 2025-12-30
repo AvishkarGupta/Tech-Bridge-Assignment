@@ -19,6 +19,8 @@
   min-width: 20rem;
   min-height: 20rem;
   padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px;
 }
 
 .title{

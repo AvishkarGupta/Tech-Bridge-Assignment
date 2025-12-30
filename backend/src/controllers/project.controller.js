@@ -78,4 +78,24 @@ const getAllProject = asyncHandler( async(req, res) =>{
 
 } )
 
-export {createProject, getAllProject}
+const getProject = asyncHandler( async(req, res) =>{
+  
+   const { id } = req.params;
+  console.log("request received to fetch projects data", id)
+
+
+  const project = await Project.findById(id)
+  // .sort({ createdAt: -1 }).limit(2)
+  // console.log(projects);
+
+  if(!project){
+    throw new ApiError(404, `Project with id: ${id} is not found`)
+  }
+
+  res
+  .status(200)
+  .json(new ApiResponse(200, project,"All projects"))
+
+} )
+
+export {createProject, getAllProject, getProject}

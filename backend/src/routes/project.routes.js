@@ -1,5 +1,5 @@
 import {Router} from "express"
-import { createProject, getAllProject } from "../controllers/project.controller.js";
+import { createProject, getAllProject, getProject } from "../controllers/project.controller.js";
 import {upload} from "../middlewares/multer.middleware.js"
 import { verifyjwt } from "../middlewares/auth.middelware.js";
 import { verifyIsUserAdmin } from "../middlewares/verifyIsUserAdmin.js";
@@ -14,9 +14,9 @@ router
   .route("/get-all")
   .get(verifyjwt, getAllProject)
 
-// router
-//   .route("/update")
-//   .get(verifyjwt, logoutUser)
+router
+  .route("/get-project/:id")
+  .get(verifyjwt, getProject)
 
 
 export default router;

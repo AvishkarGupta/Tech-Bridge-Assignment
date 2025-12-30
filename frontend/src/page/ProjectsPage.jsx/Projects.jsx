@@ -3,6 +3,7 @@ import styles from "./Projects.module.css"
 import { useEffect, useState, lazy, Suspense } from "react";
 import { useAppContext } from "../../store/Store";
 import { asyncHandler } from "../../AsyncHandler/asyncHandler";
+import {useNavigate} from "react-router-dom"
 
 const AttachmentPreview = lazy(() =>
   import("../../component/AttachmentPreview/AttachmentPreview")
@@ -11,6 +12,7 @@ const AttachmentPreview = lazy(() =>
 const API_URL = import.meta.env.VITE_API_URL;
 export function Projects(){
 
+  const navigate = useNavigate()
   const {user} = useAppContext()
   const [data, setData] = useState([])
   const {projects} = useAppContext();
@@ -29,6 +31,12 @@ export function Projects(){
 
   } )
 
+  const handleProjectNavigation = (e, project) => {
+    console.log(e)
+    console.log(project)
+    navigate(project._id)
+  }
+
   useEffect( ()=>{
     handlefetch()
   }, [])
@@ -43,7 +51,7 @@ export function Projects(){
       <div className={styles.containerdiv}>
         {data?.map( (project) =>{
           return (
-            <div key={project.title} className={styles.project}>
+            <div key={project.title} onClick={(e) => handleProjectNavigation(e, project)} className={styles.project}>
               <div className={styles.title}>{project.title}</div>
               <div className={styles.version}>{project.version}</div>
               <div className={styles.description}>{project.description}</div>
