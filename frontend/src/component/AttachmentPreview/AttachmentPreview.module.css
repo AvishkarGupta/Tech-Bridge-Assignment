@@ -9,3 +9,10 @@
 .iframe::-webkit-scrollbar {
   display: none;
 }
+
+.img{
+  max-width: 10rem;
+  max-height: 10rem;
+  justify-self: center;
+  border-radius: 5px;
+}

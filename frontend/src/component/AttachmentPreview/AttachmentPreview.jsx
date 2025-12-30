@@ -23,10 +23,9 @@ function AttachmentPreview({ file }) {
 
   if (["png", "jpg", "jpeg", "webp"].includes(fileType)) {
   return (
-    <img
+    <img className={styles.img}
       src={file.url}
       alt={String(file.name || "attachment")}
-      style={{ maxWidth: "100%", borderRadius: "8px" }}
     />
   );
   }
