@@ -8,7 +8,6 @@ const API_URL = import.meta.env.VITE_API_URL;
 export function Navbar(){
 
   const {user, logout} = useAppContext()
-  console.log(user?.refreshToken)
 
   const navConfig = {
     public: [
@@ -21,6 +20,7 @@ export function Navbar(){
       { name: "All Test", to: "/tests" },
       { name: "Create Tests", to: "/create-tests" },
       { name: "Profile", to: "/profile" },
+      { name: "Home", to: "/home" },
     ],
   };
 

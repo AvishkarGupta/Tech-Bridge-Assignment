@@ -26,11 +26,16 @@ export const AppProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
+    setProjects(null);
     localStorage.removeItem("user");
   };
 
+  const allProject = (data) =>{
+    setProjects(data);
+  }
+
   return (
-    <AppContext.Provider value={{ user, login, logout, hydrated, projects }}>
+    <AppContext.Provider value={{ user, login, logout, hydrated, projects, allProject }}>
       {children}
     </AppContext.Provider>
   );

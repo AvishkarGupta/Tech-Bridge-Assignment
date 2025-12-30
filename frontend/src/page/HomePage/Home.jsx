@@ -1,8 +1,46 @@
+import axios from "axios";
+import { asyncHandler } from "../../AsyncHandler/asyncHandler";
 import styles from "./Home.module.css";
-import { useContext } from "react"
+import { lazy, Suspense, useContext, useEffect, useState } from "react"
+import { useAppContext } from "../../store/Store";
+const API_URL = import.meta.env.VITE_API_URL;
+const LineChart = lazy(()=>{
+  return import("../../component/Charts/LineChart.jsx")
+})
 
 export function Home(){
-  return <>
-  home
-  </>
+
+  const {user, projects, allProject} = useAppContext()
+ 
+  const handlefetch = asyncHandler( async() =>{
+    const response = await axios.get(`${API_URL}/api/v1/project/get-all`, {
+      headers: {
+        authorization: `Bearer ${user.refreshToken}`
+      }
+    })
+
+    if(response.data.message === "All projects"){
+      allProject(response.data.data);
+    }
+
+  } )
+
+  useEffect( ()=>{
+    handlefetch()
+  },[] )
+  
+  return (
+    <div className={styles.conatiner}>
+      <header>
+        <h1 className={styles.firstheading}>
+          Charts and Rechart Implementation
+        </h1>
+      </header>
+      <p className={styles.text}>Currently I'm using hard coded value. Once the application complete I will replace values.</p>
+      <Suspense fallback={<div>Loading attachment...</div>}>
+        <LineChart/>
+      </Suspense>
+
+    </div>
+  )
 }
