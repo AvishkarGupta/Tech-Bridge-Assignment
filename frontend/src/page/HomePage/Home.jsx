@@ -36,7 +36,7 @@ export function Home(){
           Charts and Rechart Implementation
         </h1>
       </header>
-      <p className={styles.text}>Currently I'm using hard coded value. Once the application complete I will replace values.</p>
+      <p className={styles.text}>Currently I'm using hard coded values for charts (<b>only for charts</b>). Once the application completed. I will replace values per the DB response.</p>
       <Suspense fallback={<div>Loading attachment...</div>}>
         <LineChart/>
       </Suspense>
